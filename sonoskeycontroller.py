@@ -111,6 +111,9 @@ def favourites(speaker):
     except Exception as error:
         print("Error: {}".format(error))
 
+def seek(speaker, command, time):
+    soco_cli_command = "sonos " + speaker.ip_address + " " + command + " " + time
+    print(subprocess.getoutput(soco_cli_command))
 
 if __name__ == "__main__":
     # Catch CTL-C
@@ -154,6 +157,12 @@ if __name__ == "__main__":
                         msg += f'{key}: {t[key]}\n'
                 elif action == "volume":
                     msg = command[0] + ": " + str(speaker.volume)
+                elif action == "seek_backward":
+                    seek(speaker, "seek_back", "30s")
+                    msg = command[0]
+                elif action == "seek_forward":
+                    seek(speaker, "seek_forward", "30s")
+                    msg = command[0]
                 elif action in ["pause", "stop", "off"]:
                     speaker.pause()
                     msg = command[0]
