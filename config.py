@@ -20,6 +20,8 @@ commands = {
     "t": ("TRACK", "track"),
     "p": ("PLAY/PAUSE", "play_pause"),
     "\\": ("VOLUME", "volume"),
+    "<": ("SEEK BACKWARD 30s", "seek_backward"),
+    ">": ("SEEK FORWARD 30s", "seek_forward"),
     "r": ("PLAY", "play"),
     "f": ("PAUSE", "pause"),
     "x": ("STOP", "pause"),
