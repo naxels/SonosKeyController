@@ -17,6 +17,9 @@ speaker_ip = "192.168.0.35"
 commands = {
     # Format:
     # "Keystroke": ("DESCRIPTIVE TITLE", "Action", "Arguments"),
+    "t": ("TRACK", "track"),
+    "p": ("PLAY/PAUSE", "play_pause"),
+    "\\": ("VOLUME", "volume"),
     "r": ("PLAY", "play"),
     "f": ("PAUSE", "pause"),
     "x": ("STOP", "pause"),
