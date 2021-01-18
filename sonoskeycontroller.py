@@ -141,6 +141,19 @@ if __name__ == "__main__":
                 if action == "play":
                     speaker.play()
                     msg = command[0]
+                elif action == "play_pause":
+                    if speaker.get_current_transport_info()['current_transport_state'] == 'PLAYING':
+                        speaker.pause()
+                    else:
+                        speaker.play()
+                    msg = command[0]
+                elif action == "track":
+                    msg = 'Track:\n'
+                    t = speaker.get_current_track_info()
+                    for key in t:
+                        msg += f'{key}: {t[key]}\n'
+                elif action == "volume":
+                    msg = command[0] + ": " + str(speaker.volume)
                 elif action in ["pause", "stop", "off"]:
                     speaker.pause()
                     msg = command[0]
